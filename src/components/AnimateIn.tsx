@@ -17,13 +17,16 @@ export default function AnimateIn({
 }: Props) {
   const [ref, visible] = useInView()
 
+  const cls = [visible ? styles.visible : styles.hidden, className]
+    .filter(Boolean)
+    .join(' ')
+
   return (
     // @ts-expect-error — ref is HTMLDivElement; all target tags are HTMLElements
     <Tag
+      // @ts-expect-error
       ref={ref}
-      className={[visible ? styles.visible : styles.hidden, className]
-        .filter(Boolean)
-        .join(' ')}
+      className={cls}
       style={{ '--delay': `${delay}ms` } as CSSProperties}
     >
       {children}
