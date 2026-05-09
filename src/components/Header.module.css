@@ -1,0 +1,242 @@
+.header {
+  padding: 12px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--neutral-manga-400);
+  z-index: 100;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--neutral-void-200) 0%, rgba(15, 9, 19, 0) 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 40px 0;
+    border-bottom: 0;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 1328px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: filter 300ms ease-in-out;
+}
+
+.logo svg {
+  width: 36px;
+  height: 36px;
+  filter:
+    drop-shadow(0 0 6px rgba(210, 184, 99, 0))
+    drop-shadow(0 0 0px rgba(255, 251, 164, 0));
+  transition: filter 300ms ease-in-out;
+}
+
+.logo:hover svg {
+  filter:
+    drop-shadow(1px 1px 8px rgba(236, 66, 55, 0.5))
+    drop-shadow(-1px -1px 8px rgba(255, 251, 164, 0.5));
+}
+
+@media (min-width: 1024px) {
+  .logo svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav > *:first-child {
+  margin-left: auto;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 28px;
+  position: relative;
+  text-transform: uppercase;
+  color: var(--neutral-manga-300);
+  text-decoration: none;
+  transition: 0.1s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--neutral-manga-200);
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.link:hover {
+  text-shadow: var(--glow-text);
+  color: var(--neutral-manga-200);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 964px) {
+  .link,
+  .cta {
+    display: none;
+  }
+}
+
+.cta {
+  margin-left: auto;
+}
+
+.toggle {
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  display: none;
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+@media (max-width: 964px) {
+  .toggle {
+    display: block;
+  }
+}
+
+.toggle::before,
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 2px;
+  background-color: var(--neutral-manga-300);
+  transition: top 200ms ease, transform 200ms ease;
+}
+
+.toggle::before {
+  top: calc(50% - 4px);
+  transform: translate(-50%);
+}
+
+.toggle::after {
+  top: calc(50% + 4px);
+  transform: translate(-50%);
+}
+
+.toggle[data-open='true']::before {
+  top: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.toggle[data-open='true']::after {
+  top: 50%;
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.mobileWrapper {
+  background: var(--neutral-void-200);
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  transition: 0.5s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 500;
+}
+
+.mobileWrapper[aria-selected='true'] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileContainer {
+  max-width: 1328px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 48px 0;
+  flex-grow: 1;
+}
+
+.mobileLink {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--neutral-manga-300);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--neutral-manga-300);
+  text-decoration: none;
+}
+
+.mobileLink:hover {
+  color: var(--neutral-manga-200);
+  text-shadow: var(--glow-text);
+}
+
+.mobileCta {
+  margin-top: auto;
+  text-align: center;
+}

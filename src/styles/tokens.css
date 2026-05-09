@@ -1,0 +1,54 @@
+:root {
+  --neutral-manga-200: #efedef;
+  --neutral-manga-300: #c3bcc3;
+  --neutral-manga-400: #655f67;
+  --neutral-void-200: #0f0913;
+
+  --bavarian-blue-100: #b2e3f0;
+  --bavarian-blue-200: #33b6d8;
+  --bavarian-blue-300: #14596b;
+  --bavarian-blue-400: #0c3640;
+
+  --bavarian-gold-100: #fffba4;
+  --bavarian-gold-200: #d2b863;
+  --bavarian-gold-300: #ad832d;
+  --bavarian-gold-400: #3d2e10;
+
+  --bavarian-red-100: #f8bdb9;
+  --bavarian-red-200: #ec4237;
+  --bavarian-red-300: #a3180f;
+  --bavarian-red-400: #460a07;
+
+  --card-bg: linear-gradient(
+    156deg,
+    rgba(239, 237, 239, 0.04) 0%,
+    rgba(0, 0, 0, 0.04) 92.3%
+  );
+  --gradient-metal-blue-light: linear-gradient(
+    180deg,
+    #b2e3f0 0%,
+    #efedef 48.44%,
+    #0c3640 48.45%,
+    #33b6d8 100%
+  );
+  --gradient-border-rb: linear-gradient(77.9deg, #ec4237 0%, #33b6d8 100%);
+  --gradient-border-gold: linear-gradient(
+    230deg,
+    #fffba4 0%,
+    rgba(255, 251, 164, 0) 100%
+  );
+
+  --selection-bg: #b4ff39;
+  --selection-fg: #170f1e;
+
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+
+  --glow-text: 1px 1px 10px rgba(236, 66, 55, 0.5),
+    -1px -1px 10px rgba(255, 251, 164, 0.5);
+  --glow-box: 1px 1px 10px 0 rgba(236, 66, 55, 0.5),
+    -1px -1px 10px 0 rgba(255, 251, 164, 0.5);
+
+  --bez: cubic-bezier(0.5, 0, 0.5, 1.5);
+  --bez2: cubic-bezier(0.5, -0.5, 0.2, 1.6);
+}

@@ -1,0 +1,92 @@
+.header {
+  text-align: center;
+  margin: 0 auto 64px;
+  max-width: 720px;
+}
+
+.kicker {
+  color: var(--bavarian-blue-200);
+  margin: 0 0 16px;
+}
+
+.title {
+  color: var(--neutral-manga-200);
+  margin: 0 0 24px;
+}
+
+.title strong {
+  color: var(--bavarian-gold-200);
+}
+
+.body {
+  color: var(--neutral-manga-300);
+  margin: 0;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Exact ButtonMain pattern */
+.pill {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  text-transform: uppercase;
+  color: var(--neutral-manga-300);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 28px;
+  padding: 18px 26px;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+/* Solid manga400 border at rest — mask trick from ButtonMain */
+.pill::before,
+.pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background-color: var(--neutral-manga-400);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.pill:hover {
+  text-shadow: var(--glow-text);
+  background: var(--card-bg);
+  box-shadow: var(--glow-box);
+  backdrop-filter: blur(5px);
+  color: var(--neutral-manga-200);
+}
+
+.pill:hover::before {
+  background: var(--gradient-border-rb) border-box;
+}
+
+.pill:hover::after {
+  background: var(--gradient-border-gold) border-box;
+  opacity: 0.3;
+}
+
+.pillIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

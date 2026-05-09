@@ -1,0 +1,96 @@
+.link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+  color: var(--neutral-manga-300);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    color 300ms ease-in-out,
+    text-shadow 300ms ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .link {
+    width: auto;
+    display: inline-flex;
+  }
+}
+
+.lg {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.sm {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.link::before {
+  content: '';
+  aspect-ratio: 1/1;
+  display: block;
+  background-color: var(--bavarian-blue-100);
+  transition:
+    background-color 300ms ease-in-out,
+    transform 300ms ease-in-out,
+    box-shadow 300ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.lg::before {
+  width: 10px;
+}
+
+.sm::before {
+  width: 8px;
+}
+
+.label {
+  flex: 1;
+}
+
+.arrow {
+  margin-top: -2px;
+  font-size: 24px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+
+.arrow > span {
+  transition:
+    opacity 300ms ease-in-out,
+    color 300ms ease-in-out;
+}
+
+.arrow > span:nth-child(2),
+.arrow > span:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.link:hover {
+  color: var(--neutral-manga-200);
+  text-shadow: var(--glow-text);
+}
+
+.link:hover::before {
+  background-color: var(--bavarian-blue-200);
+  transform: scale(1.2);
+  box-shadow: var(--glow-text);
+}
+
+.link:hover .arrow > span:nth-child(1) {
+  opacity: 0;
+}
+
+.link:hover .arrow > span:nth-child(3) {
+  opacity: 1;
+  color: var(--bavarian-blue-200);
+}

@@ -1,0 +1,80 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  text-transform: uppercase;
+  color: var(--neutral-manga-300);
+  transition: box-shadow 300ms ease-in-out;
+  width: max-content;
+  text-decoration: none;
+}
+
+.lg {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 12px 20px;
+}
+
+@media (min-width: 1024px) {
+  .lg {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 18px 26px;
+  }
+}
+
+.sm {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 12px 20px;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background-color: var(--neutral-manga-400);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.button:hover {
+  text-shadow: var(--glow-text);
+  background: var(--card-bg);
+  box-shadow: var(--glow-box);
+  backdrop-filter: blur(5px);
+  color: var(--neutral-manga-200);
+}
+
+.button:hover::before {
+  background: var(--gradient-border-rb) border-box;
+}
+
+.button:hover::after {
+  background: var(--gradient-border-gold) border-box;
+  opacity: 0.3;
+}
+
+.group {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .group {
+    flex-direction: row;
+    gap: 16px;
+  }
+}

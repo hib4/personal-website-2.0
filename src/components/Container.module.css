@@ -1,0 +1,16 @@
+.container {
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.default {
+  max-width: 1328px;
+}
+
+.inner {
+  max-width: 1060px;
+}
+
+.slim {
+  max-width: 934px;
+}

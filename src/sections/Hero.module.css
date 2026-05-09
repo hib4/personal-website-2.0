@@ -1,0 +1,85 @@
+.hero {
+  text-align: center;
+  padding: 144px 0 80px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 224px 0 114px;
+    text-align: left;
+  }
+}
+
+/* Covers the full hero section; SVG inside fills to 100% height */
+.pixelBg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  /* Mobile: very subtle — tiny band at the very top only */
+  opacity: 0.3;
+  mask-image: radial-gradient(ellipse 100% 35% at 50% -5%, #000 30%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .pixelBg {
+    opacity: 0.6;
+    mask-image: radial-gradient(ellipse 110% 55% at 60% -10%, #000 30%, transparent 100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pixelBg {
+    opacity: 0.55;
+    /* Tight ellipse anchored to the top-right corner.
+       60% wide × 80% tall keeps pixels out of the left text column.
+       Fades to transparent at 75% of the ellipse radius. */
+    mask-image: radial-gradient(ellipse 80% 100% at 100% 0%, #000 10%, transparent 75%);
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.content {
+  margin-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    width: 57.96875%;
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  color: var(--neutral-manga-200);
+  margin: 0 0 24px;
+}
+
+.title strong {
+  color: var(--bavarian-gold-200);
+}
+
+.subtitle {
+  color: var(--neutral-manga-300);
+  margin: 0 0 24px;
+}
+
+.subtitle strong {
+  color: var(--bavarian-gold-200);
+  font-weight: inherit;
+}

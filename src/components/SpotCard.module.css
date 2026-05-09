@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+}
+
+.image {
+  width: 104px;
+  height: 104px;
+  position: relative;
+  margin: 0 0 24px;
+  border-radius: 16px;
+  border: 1px solid var(--neutral-manga-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--neutral-manga-200);
+}
+
+.title {
+  color: var(--neutral-manga-200);
+  margin: 0;
+}

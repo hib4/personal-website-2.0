@@ -1,0 +1,39 @@
+@keyframes flickerAnim {
+  0%   { opacity: 1; }
+  18%  { opacity: 1; }
+  19%  { opacity: 0; }
+  20%  { opacity: 1; }
+  96%  { opacity: 1; }
+  97%  { opacity: 0; }
+  98%  { opacity: 1; }
+}
+
+/* Slide left by 100% of SVG width (= 3 frames); steps(3) snaps one frame at a time */
+@keyframes transformAnim {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrapper { animation-play-state: paused; }
+  .svg     { animation-play-state: paused; }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: flickerAnim 2s infinite;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 3 frames wide, fills the wrapper's full height */
+  width: 300%;
+  height: 100%;
+  shape-rendering: crispEdges;
+  animation: transformAnim 5s steps(3) infinite;
+}

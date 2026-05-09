@@ -1,0 +1,53 @@
+.dashed {
+  position: relative;
+  height: 2px;
+}
+
+.dashed::before {
+  background-image: linear-gradient(
+    90deg,
+    var(--neutral-manga-400),
+    var(--neutral-manga-400) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-size: 15px 2px;
+  background-position: -50%;
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  top: 0;
+}
+
+.doubledashed {
+  position: relative;
+  height: 10px;
+}
+
+.doubledashed::before,
+.doubledashed::after {
+  background-image: linear-gradient(
+    90deg,
+    var(--neutral-manga-400),
+    var(--neutral-manga-400) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-size: 15px 2px;
+  background-position: -50%;
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.doubledashed::before {
+  top: 0;
+}
+
+.doubledashed::after {
+  bottom: 0;
+}

@@ -1,0 +1,106 @@
+.t-headline-88 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.t-headline-56 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.t-headline-48 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.t-headline-32 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.t-headline-20 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.t-body-32 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.t-body-24 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.t-body-20 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.t-body-18 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.t-body-16 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (min-width: 1024px) {
+  .t-headline-88 {
+    font-size: 88px;
+    line-height: 92px;
+  }
+  .t-headline-56 {
+    font-size: 56px;
+    line-height: 60px;
+  }
+  .t-headline-48 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  .t-headline-32 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .t-body-32 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .t-body-24 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .t-body-20 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
