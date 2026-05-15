@@ -20,7 +20,7 @@ export default function Hero() {
               systems</strong>, and whatever feels <strong>ship-worthy</strong> this sprint.
             </p>
             <ButtonGroup>
-              <Button href="" size="lg">
+              <Button href="https://go.hib4.me/resume" size="lg">
                 Resume
               </Button>
               <Button href="#projects" size="lg">

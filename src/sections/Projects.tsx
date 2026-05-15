@@ -1,69 +1,68 @@
-import Card, { CardContent, CardImage, CardTitle } from '../components/Card'
-import Container from '../components/Container'
-import PixelDecor from '../components/PixelDecor.module.css'
-import PixelCode from '../components/PixelCode'
-import Section from '../components/Section'
-import TextLink from '../components/TextLink'
-import WriteIn from '../components/WriteIn'
-import styles from './Projects.module.css'
+import Card, { CardContent, CardImage, CardTitle } from "../components/Card";
+import Container from "../components/Container";
+import PixelDecor from "../components/PixelDecor.module.css";
+import PixelCode from "../components/PixelCode";
+import Section from "../components/Section";
+import TextLink from "../components/TextLink";
+import WriteIn from "../components/WriteIn";
+import styles from "./Projects.module.css";
 
 type Project = {
-  title: string
-  description: string
-  tags: string[]
-  github: string
-  live: string
-  color: string
-  initial: string
-  rotate: 'left' | 'right'
-}
+  title: string;
+  description: string;
+  tags: string[];
+  github?: string;
+  live?: string;
+  color: string;
+  initial: string;
+  rotate: "left" | "right";
+};
 
 const PROJECTS: Project[] = [
   {
-    title: 'Project One',
+    title: "KANCA",
     description:
-      'A short description of the project. What problem it solves and the most interesting thing about how it does that.',
-    tags: ['TypeScript', 'React', 'Vite'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'var(--bavarian-blue-400)',
-    initial: '01',
-    rotate: 'left',
+      "AI learning platform delivering personalized interactive stories for children, generating curriculum aligned content with LLM plus RAG based on each learner’s preferences.",
+    tags: ["Flutter", "FastAPI", "LangChain"],
+    live: "https://kanca.id",
+    color: "var(--bavarian-blue-400)",
+    initial: "KC",
+    rotate: "left",
   },
   {
-    title: 'Project Two',
+    title: "GoVision",
     description:
-      'Another short blurb. Replace with a real one-paragraph summary that highlights the impact or the technical twist.',
-    tags: ['Python', 'Postgres', 'Docker'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'var(--bavarian-gold-400)',
-    initial: '02',
-    rotate: 'right',
+      "Assistive AI system for visually impaired users, combining scene understanding, obstacle detection, and voice assistance to improve navigation, awareness, and independent mobility.",
+    tags: ["Python", "gRPC", "GCP"],
+    live: "https://govision.framer.website",
+    color: "var(--bavarian-gold-400)",
+    initial: "GV",
+    rotate: "right",
   },
   {
-    title: 'Project Three',
+    title: "Garuda Hacks",
     description:
-      'Third placeholder. Keep these to two short sentences so cards stay roughly the same height in the grid.',
-    tags: ['Go', 'gRPC', 'k8s'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    color: 'var(--bavarian-red-400)',
-    initial: '03',
-    rotate: 'left',
+      "Cross platform hackathon management platform streamlining attendance, check in, and event operations through automated QR systems and real time synchronization.",
+    tags: ["Flutter", "Redis", "Express"],
+    live: "https://apps.apple.com/id/app/garuda-hacks-6-0/id6504819018",
+    color: "var(--bavarian-red-400)",
+    initial: "GH",
+    rotate: "left",
   },
-]
+];
 
 export default function Projects() {
   return (
     <Section id="projects">
-      <div className={[PixelDecor.decor, PixelDecor.projectsDecor].join(' ')}>
+      <div className={[PixelDecor.decor, PixelDecor.projectsDecor].join(" ")}>
         <PixelCode />
       </div>
       <Container>
         <div className={styles.header}>
-          <h2 className={[styles.kicker, 't-headline-20'].join(' ')}>Projects</h2>
-          <WriteIn className={[styles.title, 't-headline-48'].join(' ')}>
+          <h2 className={[styles.kicker, "t-headline-20"].join(" ")}>
+            Projects
+          </h2>
+          <WriteIn className={[styles.title, "t-headline-48"].join(" ")}>
             Selected <strong>work</strong>.
           </WriteIn>
         </div>
@@ -73,7 +72,9 @@ export default function Projects() {
               <CardImage rotate={p.rotate} color={p.color} label={p.initial} />
               <CardContent>
                 <CardTitle>{p.title}</CardTitle>
-                <p className={[styles.description, 't-body-20'].join(' ')}>{p.description}</p>
+                <p className={[styles.description, "t-body-20"].join(" ")}>
+                  {p.description}
+                </p>
                 <ul className={styles.tags}>
                   {p.tags.map((t) => (
                     <li key={t} className={styles.tag}>
@@ -81,19 +82,25 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
-                <div className={styles.links}>
-                  <TextLink href={p.github} target="_blank" rel="noreferrer">
-                    GitHub
-                  </TextLink>
-                  <TextLink href={p.live} target="_blank" rel="noreferrer">
-                    Live
-                  </TextLink>
-                </div>
+                {(p.github || p.live) && (
+                  <div className={styles.links}>
+                    {p.github && (
+                      <TextLink href={p.github} target="_blank" rel="noreferrer">
+                        GitHub
+                      </TextLink>
+                    )}
+                    {p.live && (
+                      <TextLink href={p.live} target="_blank" rel="noreferrer">
+                        Live
+                      </TextLink>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
         </div>
       </Container>
     </Section>
-  )
+  );
 }

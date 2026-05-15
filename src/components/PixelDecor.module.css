@@ -62,6 +62,16 @@
   }
 }
 
+/* Hide section pixel mascots on tablet widths. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .aboutDecor,
+  .projectsDecor,
+  .blogDecor,
+  .contactDecor {
+    display: none;
+  }
+}
+
 /* ── Desktop (1024 px +) ────────────────────────────────────────────────────
    Full size, same corner anchors, slightly more opacity. */
 @media (min-width: 1024px) {

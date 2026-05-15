@@ -21,7 +21,7 @@ const COLUMNS = [
   {
     title: 'Resources',
     links: [
-      { href: '#', label: 'Resume' },
+      { href: 'https://go.hib4.me/resume', label: 'Resume' },
       { href: '#', label: 'Uses' },
       { href: '#', label: 'Now' },
     ],
